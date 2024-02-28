@@ -116,7 +116,7 @@ export default function CharacterCommunity(){
 
 	return(
 		<div className={styles.Background}>
-			<CommonHeader content="캐릭터 목록" />
+			<CommonHeader content="캐릭터 목록" isCharacter={true}/>
 			{/* <div className='SearchContainer'>
 				<BsSearch size={24}></BsSearch> 
 				<input className='CommunitySearch' onChange={(e) => searchItems(e.target.value)}></input>

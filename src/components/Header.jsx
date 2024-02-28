@@ -12,7 +12,7 @@ export default function CommonHeader(props){
 		<div className="HeaderContainer">
 			<BsChevronLeft size={28} onClick={onClickButton}/>
 			<h2 className="text">{props.content}</h2>
-			<CiSquarePlus size={36} />
+			{props.isCharacter ? <CiSquarePlus size={36}/> : <div/>}
 		</div>
 	)
 	
