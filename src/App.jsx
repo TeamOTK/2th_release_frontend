@@ -4,8 +4,11 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
-
+import HomePage from './components/HomePage';
 import CharacterCommunity from './components/CharacterCommunity';
+import WarningPage from './components/WarningPage';
+import Chat from './components/chat/Chat';
+import CharacterSettingPage from './components/CharacterSettingPage';
 
 const App = () => {
 
@@ -13,7 +16,12 @@ const App = () => {
 		<div className='App'>
 			<BrowserRouter>
 				<Routes>
-					<Route path='/community' element={<CharacterCommunity/>}></Route>
+					<Route path="/" element={<HomePage />}></Route>
+					<Route path='/character' element={<CharacterCommunity/>}></Route>
+					<Route path='/character/setting' element={<CharacterSettingPage/>}></Route>
+					<Route path='/warning' element={<WarningPage/>}></Route>
+					<Route path='/chat' element={<Chat/>}></Route>
+					<Route path="/*" element={<HomePage />}></Route>
 				</Routes>
 			</BrowserRouter>
 		</div>
