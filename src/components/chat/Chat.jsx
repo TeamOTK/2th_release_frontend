@@ -101,7 +101,7 @@ export default function Chat(){
 	};
 	return(
 		<div className={styles.Background}>
-			<CommonHeader content={name}/>
+			<CommonHeader content={name} userId={userId}/>
 			{/* {count < 10 ? <div></div> : <Button className={styles.SurveyBtn} onClick={()=>window.open("https://forms.gle/cSZAF8EfoSvoTqiL7")}>!설문!</Button>} */}
 			<div className={styles.ChatContainer}>
 				<div className={styles.ChatLog} ref={scrollRef}>
