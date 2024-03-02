@@ -17,21 +17,18 @@ export default function Chat(){
 	const navigate = useNavigate();
 	const location = useLocation();
 	
-	const [chatId, setChatId] = useState(0)
 	const [isChat, setIsChat] = useState(false)
 
-
-	const characterId = 1;
-	const situationId = 1;
-	const name = "안녕";
-	const imgName = "안녕";
-	const firstConv = "안녕";
+	const characterId = location.state.characterId;
+	const name = location.state.name;
+	const imgName = location.state.imgName;
 
 	const [user, setUser] = useState("user")
-	const [chats, setChats] = useState([{ name: name, content: firstConv }]);
+	const [chats, setChats] = useState([]);
 	const [content,setContent] = useState('');
 	const [msgLabel, setMsgLabel] = useState("메세지를 입력하세요")
 	const [count, setCount] = useState(0)
+	const [userId, setUserId] = useState("");
 
 	const getUserId = () => {
 		// 로컬 스토리지에서 사용자 ID를 시도하여 가져옴
@@ -52,6 +49,7 @@ export default function Chat(){
 			});
 			// 답장
 			setCount(res.data.user.chat_cnt)
+			setUserId(res.data.user.user_id)
 		}
 		registerId();
 	},[])
@@ -68,11 +66,9 @@ export default function Chat(){
 		setMsgLabel("답변 생성 중입니다...")
 		setChats(currentChats => [...currentChats, { key: Date.now(), name: user, content }]);
 		setContent('');
-
 		const res = await axios.post(`http://13.209.167.220/chats/response`, {
-			"user_id": 1,
+			"user_id": userId,
 			"character_id": characterId,
-			"situation_id": situationId,
 			"user_chat": content
 		});
 		// 답장
@@ -105,8 +101,8 @@ export default function Chat(){
 	};
 	return(
 		<div className={styles.Background}>
-			<CommonHeader content="캐릭터 이름"/>
-			{count < 10 ? <div></div> : <Button className={styles.SurveyBtn} onClick={()=>window.open("https://forms.gle/cSZAF8EfoSvoTqiL7")}>!설문!</Button>}
+			<CommonHeader content={name}/>
+			{/* {count < 10 ? <div></div> : <Button className={styles.SurveyBtn} onClick={()=>window.open("https://forms.gle/cSZAF8EfoSvoTqiL7")}>!설문!</Button>} */}
 			<div className={styles.ChatContainer}>
 				<div className={styles.ChatLog} ref={scrollRef}>
 					{chats && chats.map((chat, index) => (
