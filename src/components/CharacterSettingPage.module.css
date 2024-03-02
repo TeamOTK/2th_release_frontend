@@ -17,28 +17,42 @@
 }
 
 .SettingBox{
-	width: 80%;
+	width: 88%;
 	margin-top: 6%;
 }
 
-.NameCategoriBox{
+.NameCategoryBox{
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
+	width: 88%;
 }
 
-.NameCategori{
-	width: 50%;
+.NameCategory{
+	width: 48%;
 }
 
 .Tag{
-	font-size: 120%;
+	font-size: 100%;
 	font-weight: bold;
 	margin-right: 2%;
 }
 
+.Tagtwo{
+	font-size: 100%;
+	font-weight: bold;
+	width: 13%;
+}
+
+.TagEx{
+	font-size: 100%;
+	font-weight: bold;
+	width: 22%;
+}
+
 .inputBox{
 	width: 100%;
-	border: 1.5px solid black;
+	border-radius: 0;
 }
 
 .SubWarning{
@@ -60,7 +74,7 @@
 .radioContainer{
 	display: flex;
 	flex-direction: row;
-	width: 40%;
+	width: 70%;
 	justify-content: space-between;
 }
 
@@ -73,6 +87,7 @@
 .imgBox{
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 }
 
 .imgPreview{
@@ -112,13 +127,21 @@
 }
 
 .LabelWarning{
-	font-size: 90%;
+	font-size: 60%;
 	color: red;
 }
 
 .LabelOkay{
-	font-size: 90%;
-	color: gray;
+	font-size: 55%;
+	color: #000000;
+	margin-bottom: 0;
+}
+
+.PersonalityItem{
+	width: 21%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
 .inputFileButton{
@@ -129,4 +152,9 @@
   color: #000000;
   cursor: pointer;
 	font-weight: 600;
+	height: 10%;
+}
+
+.RequiredStar{
+	color:#dc3545
 }
