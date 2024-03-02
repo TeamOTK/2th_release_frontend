@@ -50,14 +50,14 @@ ul.tabs li.isActiveTab{
 	flex-direction: column;
 	align-items: center;
 	padding-top: 4%;
-	overflow-y: hidden;
+	overflow-y: scroll;
 }
 
 
 .CharacterSetItem{
 	width: 90%;
 	height: 0;
-	padding-bottom: 23%;
+	padding-bottom: 25%;
 	position: relative;
 	border: 1px solid black;
 	border-radius: 15px;
@@ -99,6 +99,8 @@ ul.tabs li.isActiveTab{
 .ItemDesc{
 	width: 100%;
 	font-size: 80%;
+	height: 2.5vh;
+	overflow-y: hidden;
 }
 
 .userCountBox{
@@ -134,10 +136,20 @@ ul.tabs li.isActiveTab{
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	margin-bottom: 2%;
 }
 
 .CommunitySearch{
 	border: none;
+	border: 0;
 	border-bottom: 1px solid black;
 	width: 80%;
+	background-color: #F9F07A;
+}
+
+.nameBox{
+	font-size: 140%;
+	font-weight: bold;
+	height: 4vh;
+	overflow-y: hidden;
 }
